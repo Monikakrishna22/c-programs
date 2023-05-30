@@ -1,0 +1,28 @@
+//deletion
+#include <stdio.h>
+void del(int a[], int size, int pos) {
+    if (pos< 0 || pos >= size) {
+        printf("Invalid position!");
+        return;
+    }
+    for (int i = pos; i < size - 1; i++) {
+        a[i] = a[i + 1];
+    }
+}
+int main() {
+   int size, pos;
+    scanf("%d", &size);
+    int a[size];
+    printf("Enter elements \n");
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &a[i]);
+    }
+    printf("Enter the position of the element to delete: ", size - 1);
+    scanf("%d", &pos);
+    del(a, size, pos);
+    printf("Modified array after deletion: ");
+    for (int i = 0; i < size - 1; i++) {
+        printf("%d ", a[i]);
+    }
+    return 0;
+}
